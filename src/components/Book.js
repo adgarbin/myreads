@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Book = ({ book, onBookAction }) => (
   <div className="book">
@@ -10,8 +10,8 @@ const Book = ({ book, onBookAction }) => (
           width: 128,
           height: 193,
           backgroundImage: `url(${
-            book.imageLinks ? book.imageLinks.thumbnail : ''
-          })`,
+            book.imageLinks ? book.imageLinks.thumbnail : ""
+          })`
         }}
       />
 
@@ -20,7 +20,9 @@ const Book = ({ book, onBookAction }) => (
           onChange={event => onBookAction(event.target.value)}
           value={book.shelf}
         >
-          <option value="none" disabled>Move to...</option>
+          <option value="move" disabled>
+            Move to...
+          </option>
           <option value="currentlyReading">Currently Reading</option>
           <option value="wantToRead">Want to Read</option>
           <option value="read">Read</option>
@@ -32,19 +34,18 @@ const Book = ({ book, onBookAction }) => (
     <div className="book-title">{book.title}</div>
     {book.authors
       ? book.authors.map(author => (
-        <div className="book-authors" key={author}>
-          {author}
-        </div>
-      ))
+          <div className="book-authors" key={author}>
+            {author}
+          </div>
+        ))
       : null}
   </div>
 );
 
 Book.propTypes = {
-
   book: PropTypes.object.isRequired,
 
-  onBookAction: PropTypes.func.isRequired,
+  onBookAction: PropTypes.func.isRequired
 };
 
 export default Book;
