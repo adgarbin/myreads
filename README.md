@@ -6,7 +6,7 @@ MyReads is a bookcase application that allows you to select and sort the books y
 
 > This ordered list of terminal commands will get you a copy of the project to run on your local machine.
 
-`git clone https://github.com/garba/myreads.git`
+`git clone https://github.com/daltongarbin/myreads.git`
 
 `cd myreads`
 
